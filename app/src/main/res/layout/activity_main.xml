@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@android:id/tabhost"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/line"
+            android:layout_margin="10dp"
+            android:layout_alignParentRight="true"
+            app:fabSize="mini"
+            app:backgroundTint="@color/floating_action_button_tine_bg_color"
+            android:tint="@android:color/white"
+            app:srcCompat="@drawable/ic_add_black_24dp"
+            tools:ignore="VectorDrawableCompat" />
+
+        <HorizontalScrollView
+            android:id="@+id/tab_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:showDividers="none" />
+        </HorizontalScrollView>
+
+
+        <ImageView
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_above="@+id/tab_scroll"
+            android:background="@color/line_color" />
+
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <FrameLayout
+            android:id="@+id/tab_real_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/line"
+            android:background="@color/white" />
+    </RelativeLayout>
+
+</TabHost>
+
+

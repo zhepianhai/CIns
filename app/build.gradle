@@ -1,0 +1,65 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.zph.cins"
+        minSdkVersion 17
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            //设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "x86", "arm64-v8a", "x86_64"
+        }
+
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    //noinspection GradleCompatible
+    implementation "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:support-v4:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:design:$rootProject.supportLibraryVersion"
+    implementation 'com.android.support:design:26.1.0-alpha1'
+    // 控件依赖注入库
+    implementation "com.jakewharton:butterknife:$rootProject.bufferKnifeVersion"
+    // bufferknife控件依赖注入库编译器
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.bufferKnifeVersion"
+    //dagger
+    implementation 'com.google.dagger:dagger:2.14.1'
+    annotationProcessor "com.google.dagger:dagger-compiler:2.14.1"
+    //mvp
+    implementation 'com.hannesdorfmann.mosby3:viewstate:3.1.0'
+    implementation 'com.trello.rxlifecycle2:rxlifecycle:2.2.1'
+    implementation 'com.trello.rxlifecycle2:rxlifecycle-android-lifecycle:2.2.1'
+    implementation 'cn.bingoogolapple:bga-swipebacklayout:1.1.8@aar'
+    //ui库
+    //LuseenBottomNavigation library
+    implementation 'com.ashokvarma.android:bottom-navigation-bar:2.0.4'
+    implementation 'com.devbrackets.android:exomedia:4.1.0'
+}

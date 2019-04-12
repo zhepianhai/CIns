@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ECEFF1</color>
+    <color name="colorPrimaryDark">#ECEFF1</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey">#bfbfbf</color>
+    <color name="black">#000000</color>
+    <color name="colorHome">#000000</color>
+    <color name="LightGray">#aFFFFFFF</color>
+    <color name="colorHomeCv">#DB7093</color>
+    <color name="floating_action_button_tine_bg_color">@color/colorHomeCv</color>
+    <color name="bottom_navigation_bar_active">@color/colorHome</color>
+    <color name="bottom_navigation_bar_background">@color/white</color>
+
+
+    <color name="line_color">#cccccc</color>
+    <color name="line_color2">#e5e5e5</color>
+</resources>
